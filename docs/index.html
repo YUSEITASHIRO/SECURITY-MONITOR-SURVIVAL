@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horror Game Wasm</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: #ccc;
+            font-family: sans-serif;
+        }
+
+        #canvas {
+            border: none;
+            outline: none;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #loading {
+            position: absolute;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">Loading Engine...</div>
+    <canvas id="canvas" tabindex="-1"></canvas>
+    <script type="module">
+        import { dotnet } from './_framework/dotnet.js';
+
+        // Emscripten runtime config hook
+        const myModuleConfig = {
+            canvas: document.getElementById('canvas')
+        };
+
+        async function initGame() {
+            try {
+                // Initialize .NET and get the exports
+                const { getAssemblyExports, getConfig } = await dotnet
+                    .create();
+
+                const config = getConfig();
+                const exports = await getAssemblyExports(config.mainAssemblyName);
+
+                document.getElementById('loading').innerText = "Starting App...";
+                await dotnet.run(); // Calls Program.Main()
+                document.getElementById('loading').style.display = 'none';
+
+                // Game Loop hook
+                function nextFrame() {
+                    exports.Program.Update();
+                    requestAnimationFrame(nextFrame);
+                }
+                nextFrame();
+
+            } catch (err) {
+                console.error(err);
+                document.getElementById('loading').innerText = "An error occurred: " + err;
+            }
+        }
+        initGame();
+    </script>
+</body>
+
+</html>

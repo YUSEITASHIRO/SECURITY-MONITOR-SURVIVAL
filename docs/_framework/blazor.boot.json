@@ -1,0 +1,38 @@
+{
+  "mainAssemblyName": "HorrorGame.dll",
+  "resources": {
+    "hash": "sha256-aBx7GjenAPopBY6uP6ZiCjkJ11N0CeRT4KXgibbTHEE=",
+    "jsModuleNative": {
+      "dotnet.native.js": "sha256-OX+4dTNcpMAxPuvLDBQ7H36CAAVcy60WSKX7SdqHiEQ="
+    },
+    "jsModuleRuntime": {
+      "dotnet.runtime.js": "sha256-W1NVCHdXLsZwmcxPLLatkJOSnfn1UNne6uSpSi63ozM="
+    },
+    "wasmNative": {
+      "dotnet.native.wasm": "sha256-4I7cJlcgXUl6mb9Z7gVs873OBcl2KfIOgH8/ttIlU50="
+    },
+    "wasmSymbols": {
+      "dotnet.native.js.symbols": "sha256-ygDzItgOGN7z0CXe54GDK5+AERbhEiY0XlHeFWcrMIw="
+    },
+    "icu": {
+      "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
+      "icudt_EFIGS.dat": "sha256-8fItetYY8kQ0ww6oxwTLiT3oXlBwHKumbeP2pRF4yTc=",
+      "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
+    },
+    "coreAssembly": {
+      "System.Private.CoreLib.wasm": "sha256-Mo4glJyBsJ/KRqPsvdr2iSesztH+olT6EBOJALCqWts=",
+      "System.Runtime.InteropServices.JavaScript.wasm": "sha256-xsZwmEIbNm3sbiJeqQJ88pHglvTAnywfi/4b7+I99ew="
+    },
+    "assembly": {
+      "HorrorGame.wasm": "sha256-JNjUu9mYdm2DzNrGJf4ad6YLJSUsgwjzc3UsNHbDc/8=",
+      "Raylib-cs.wasm": "sha256-udRNqhOaT+MeOQmokeFgvD6FMoCMRyIa7F+mgFoV1gM="
+    },
+    "coreVfs": {
+      "runtimeconfig.bin": {
+        "supportFiles/0_runtimeconfig.bin": "sha256-63lTjEq7V2H7TCA4Eljv8JdkytihvlY7l95GmsQHC7k="
+      }
+    }
+  },
+  "debugLevel": 0,
+  "globalizationMode": "sharded"
+}
