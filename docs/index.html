@@ -41,22 +41,24 @@
     <script type="module">
         import { dotnet } from './_framework/dotnet.js';
 
-        // Emscripten runtime config hook
-        const myModuleConfig = {
-            canvas: document.getElementById('canvas')
-        };
-
         async function initGame() {
             try {
                 // Initialize .NET and get the exports
-                const { getAssemblyExports, getConfig } = await dotnet
+                const { getAssemblyExports, getConfig, runMain } = await dotnet
+                    .withDiagnosticTracing(false)
                     .create();
 
                 const config = getConfig();
                 const exports = await getAssemblyExports(config.mainAssemblyName);
 
+                // Emscripten hook!
+                dotnet.instance.Module['canvas'] = document.getElementById('canvas');
+
                 document.getElementById('loading').innerText = "Starting App...";
-                await dotnet.run(); // Calls Program.Main()
+
+                // Keep the loading screen around during the first synchronous tick
+                await runMain();
+
                 document.getElementById('loading').style.display = 'none';
 
                 // Game Loop hook
