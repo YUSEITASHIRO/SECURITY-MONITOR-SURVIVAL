@@ -1,7 +1,5 @@
 # 👁️ SECURITY MONITOR SURVIVAL
 
-![Header Image](file:///C:/Users/yusei/.gemini/antigravity/brain/6f66188c-a07f-47ce-b12f-0ed9cf21c577/security_monitor_survival_header_1773401606194.png)
-
 ### *「見ている間だけ、奴はそこに留まる。瞬きは、死を意味する。」*
 > C# / Raylib-cs による、監視カメラ越しの心理的サバイバルホラー。
 
@@ -121,3 +119,4 @@ dotnet run --project HorrorGame.csproj
 ---
 
 *田代悠晟個人制作ゲーム作品 / SECURITY MONITOR SURVIVAL*
+
