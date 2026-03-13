@@ -18,7 +18,7 @@
 
 ---
 
-## 📖 世界観・ナラティブ (Story & Lore)
+## 📖 世界観 (Story)
 
 深夜の静寂に包まれた極秘施設。
 あなたは一晩の「監視代行」を請け負った臨時警備員です。
@@ -109,6 +109,7 @@ dotnet run --project HorrorGame.csproj
 ---
 
 *田代悠晟個人制作ゲーム作品 / SECURITY MONITOR SURVIVAL*
+
 
 
 
